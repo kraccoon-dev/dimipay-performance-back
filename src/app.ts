@@ -29,6 +29,11 @@ class App {
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use('/assets', express.static(path.join(__dirname, '/assets')));
+    this.app.use('/privacy', (req, res) => {
+      res.sendFile(
+        path.join(path.join(__dirname, 'assets/privacyPolicy.html'))
+      );
+    });
     this.app.use(jsend.middleware);
     this.app.use(cookieParser(config.cookieSecret));
   }
