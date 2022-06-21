@@ -22,9 +22,6 @@ class App {
 
   private initializeRouter() {
     this.app.use('/', serviceRouter);
-    this.app.use('/', function (_req, res): void {
-      res.send(__dirname);
-    });
   }
 
   private initializeMiddlewares() {
