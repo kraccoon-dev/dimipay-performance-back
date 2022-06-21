@@ -30,7 +30,7 @@ class App {
     this.app.use(express.json());
     this.app.use('/assets', express.static(path.join(__dirname, '/assets')));
     this.app.use('/privacy', (req, res) => {
-      res.sendFile(path.join('assets/privacyPolicy.html'));
+      res.sendFile('assets/privacyPolicy.html');
     });
     this.app.use(jsend.middleware);
     this.app.use(cookieParser(config.cookieSecret));
